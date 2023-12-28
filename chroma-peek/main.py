@@ -20,14 +20,16 @@ st.markdown(""" <style>
 st.title("Chroma Peek 👀")
 
 # get uri of the persist directory
-path = ""
-path = st.text_input("Enter persist path", placeholder="paste full path of persist")
+host = ""
+host = st.text_input("Enter host", placeholder="host")
+port = ""
+port = st.text_input("Enter port", placeholder="port")
 
 st.divider()
 
 # load collections
-if not(path==""):
-    peeker = ChromaPeek(path)
+if not(host==""):
+    peeker = ChromaPeek(host,port)
 
     ## create radio button of each collection
     col1, col2 = st.columns([1,3])
@@ -52,5 +54,5 @@ if not(path==""):
         st.dataframe(result_df, use_container_width=True)
 
 else:
-    st.subheader("Enter Valid Full Persist Path")
+    st.subheader("Enter Valid details")
         

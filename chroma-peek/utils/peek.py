@@ -2,8 +2,8 @@ import chromadb
 import pandas as pd
 
 class ChromaPeek:
-    def __init__(self, path):
-        self.client = chromadb.PersistentClient(path)
+    def __init__(self, host, port):
+        self.client = chromadb.HttpClient(host, port)
 
     ## function that returs all collection's name
     def get_collections(self):
