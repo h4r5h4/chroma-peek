@@ -2,4 +2,4 @@ streamlit
 pandas
 chromadb-client
 fastapi
-yaml
+PyYAML
