@@ -1,4 +1,3 @@
 streamlit
 pandas
-chromadb==0.4.20
-pysqlite3-binary
+chromadb-client

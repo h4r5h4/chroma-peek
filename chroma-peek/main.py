@@ -1,7 +1,3 @@
-__import__('pysqlite3')
-import sys
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-
 import streamlit as st
 import pandas as pd
 from utils.peek import ChromaPeek
@@ -28,12 +24,14 @@ host = ""
 host = st.text_input("Enter host", placeholder="host")
 port = ""
 port = st.text_input("Enter port", placeholder="port")
+auth_token = ""
+auth_token = st.text_input("Enter Auth Token", placeholder="auth-token")
 
 st.divider()
 
 # load collections
 if not(host==""):
-    peeker = ChromaPeek(host,port)
+    peeker = ChromaPeek(host,port, auth_token)
 
     ## create radio button of each collection
     col1, col2 = st.columns([1,3])
