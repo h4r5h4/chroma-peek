@@ -33,6 +33,10 @@ st.divider()
 if not(host==""):
     peeker = ChromaPeek(host,port, auth_token)
 
+    # Add refresh button
+    if st.button('Refresh'):
+        st.rerun()
+
     ## create radio button of each collection
     col1, col2 = st.columns([1,3])
     with col1:
